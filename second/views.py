@@ -5,15 +5,16 @@ from django.shortcuts import render
 def home(request):
     return render(request,'home.html')
 
-def lower(request):
+def string(request):
     txt=''
     if request.method=='POST':
+        #if request.POST.get('lower'):
         txt=request.POST.get('tarea')
-        #print(txt)
+            #print(txt)
     context={
             'txt':txt,
         }
-    return render(request,'BuiltInTags/lower.html', context)
+    return render(request,'BuiltInTags/string.html', context)
     
 def reference(request):
     return render(request,'BuiltInTags/Reference.html')

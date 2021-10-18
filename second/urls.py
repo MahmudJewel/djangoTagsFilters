@@ -4,7 +4,7 @@ from second import views
 urlpatterns = [
     path('', views.home, name='home'),
 
-    path('lower', views.lower, name='lower'),
+    path('string', views.string, name='string'),
     path('reference', views.reference, name='reference'),
 
 ]
