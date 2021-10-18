@@ -25,9 +25,11 @@ Ignores everything between {% comment %} and {% endcomment %}
 
 Example:
 
-``` {% comment "Optional note" %}
+```
+ {% comment "Optional note" %}
 	<p>Commented out text with {{ create_date|date:"c" }}</p> 
-{% endcomment %} ```
+{% endcomment %} 
+```
 
 
 
@@ -40,13 +42,15 @@ Example:
 ## include
 Loads a template and renders it with the current context. This is a way of “including” other templates within a template.
 Example:
-``` {% include "foo/bar.html" %} ```
+```
+ {% include "foo/bar.html" %} 
+```
 
 
 ## load
 Loads a custom template tag set
 example:
-{% load somelibrary package.otherlibrary %}
+** {% load somelibrary package.otherlibrary %} **
 
 ## lorem
 Displays random “lorem ipsum” Latin text. This is useful for providing sample data in templates.
@@ -58,10 +62,11 @@ or
 
 
 Argument
-Description
-count
+### Description
+** count **
 A number (or variable) containing the number of paragraphs or words to generate (default is 1).
-method
+
+** method **
 Either w for words, p for HTML paragraphs or b for plain-text paragraph blocks (default is b).
 random
 The word random, which if given, does not use the common paragraph (“Lorem ipsum dolor sit amet…”) when generating text.
