@@ -24,22 +24,22 @@ Ignores everything between {% comment %} and {% endcomment %}
 
 Example:
 
-```{% comment "Optional note" %}
+``` {% comment "Optional note" %}
 	<p>Commented out text with {{ create_date|date:"c" }}</p> 
-{% endcomment %}```
+{% endcomment %} ```
 
 
 
 ## extends
 Signals that this template extends a parent template.
 Example:
-```{% extends "base.html" %}```
+``` {% extends "base.html" %} ```
 
 
 ## include
 Loads a template and renders it with the current context. This is a way of “including” other templates within a template.
 Example:
-```{% include "foo/bar.html" %}```
+``` {% include "foo/bar.html" %} ```
 
 
 ## load
