@@ -2,10 +2,10 @@
 Django allows to create custom templates and filters(functions).
 
 ## Process: 
-i) Create a folder named ‘templatetags’ inside apps. #app can be created python manage.py createapp appName
-ii) Inside ‘templatetags’ folder, create a file named ‘__init__.py’ .    
-iii) Now we can create custom module as many as we want.
-iv) Load the module without extension inside the template.
+* i) Create a folder named ‘templatetags’ inside apps. #app can be created python manage.py createapp appName
+* ii) Inside ‘templatetags’ folder, create a file named ‘__init__.py’ .    
+* iii) Now we can create custom module as many as we want.
+* iv) Load the module without extension inside the template.
 	**{% load custom_tag %}** 
 Example:
 ```
@@ -43,6 +43,7 @@ demo.html
 
 # Built-in template tags and filters
 In templates, values are passed  {{value}} and Tags are passed {% tags %}
+
 ## filter==>Method or Function
 Filters the contents of the block through one or more filters. Multiple filters can be specified with pipes and filters can have arguments, just as in variable syntax.
 
@@ -58,11 +59,12 @@ Or
 {{ value|add:"2" }}
 ```
 If value is 4, then the output will be 6.
-Here add is a filter (function), 2 is the argument
+**Here add is a filter (function), 2 is the argument**
 
 
 # Some Built-in tag reference
 In the above example, filter is also a Built-in tags.
+
 ## comment
 Ignores everything between {% comment %} and {% endcomment %}
 
@@ -106,16 +108,17 @@ or
 
 Argument
 ### Description
-** count **
+**count**
 A number (or variable) containing the number of paragraphs or words to generate (default is 1).
 
-** method **
+**method**
 Either w for words, p for HTML paragraphs or b for plain-text paragraph blocks (default is b).
 random
 The word random, which if given, does not use the common paragraph (“Lorem ipsum dolor sit amet…”) when generating text.
 
 ## url
 Returns an absolute path reference (a URL without the domain name) matching a given view and optional parameters. Any special characters in the resulting path will be encoded using iri_to_uri().
+
 Example:
 {% url 'app-views-client' client.id %}
 where
@@ -129,6 +132,7 @@ path('client/<int:id>/', app_views.client, name='app-views-client')
 
 
 # Built-in filter reference
+
 ## add
 Adds the argument to the value.
 Syntax:
