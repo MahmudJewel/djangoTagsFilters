@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 def home(request):
     return render(request,'home.html')
-
+# Built-in Tags
 def string(request):
     txt=''
     if request.method=='POST':
@@ -18,3 +18,16 @@ def string(request):
     
 def reference(request):
     return render(request,'BuiltInTags/Reference.html')
+
+
+#custom-Tags
+def operation(request):
+    num1, num2 =1,1
+    if request.method=='POST':
+        num1=int(request.POST.get('inpt1'))
+        num2=int(request.POST.get('inpt2'))
+    context={
+        'num1':num1,
+        'num2':num2,
+    }
+    return render(request, 'custom/operation.html', context)

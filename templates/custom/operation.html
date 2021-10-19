@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load operation %}
+{% block content %}
+<div style="text-align: center;" class="container" >
+    <div class="mb-3">
+      
+      <form method="POST" > 
+        {% csrf_token %}
+
+        <!--Input Number-->
+      <div class="mb-3">
+        <label class="form-label">Enter Number</label>
+        <div class="row" >
+        <div class="col-3" ></div>
+        <div class="col-6">
+            <input class="form-control" name="inpt1" type="number" placeholder="Enter a number" required >
+        </div>
+    </div>
+        <br>
+        <div class="row" >
+        <div class="col-3" ></div>
+        <div class="col-6" >
+            <input class="form-control" name="inpt2" type="number" placeholder="Enter a number" required >
+        </div>
+        </div>
+      </div>
+
+      <!--button-->
+      <div> 
+          <button class="btn btn-primary" type="submit" name='add'>Add</button>
+          <button class="btn btn-primary" type="submit" name='sub'>Subtract</button>
+          <button class="btn btn-primary" type="submit" name='mul'>Multiply</button>
+          <button class="btn btn-primary" type="submit" name='div'>Divide</button>
+          <button class="btn btn-primary" type="submit" name='rem'>Reminder</button>  
+        </div>
+      </form>
+    <br><br>
+
+    <!--Result-->
+    <div class="mb-3">
+      <div class="row">
+        <div class="col-3" ></div>
+        <div class="col-6">
+          <label for="exampleFormControlTextarea1" class="form-label">Result</label>
+            {% if 'add' in request.POST %}
+          <textarea class="form-control" rows="6" 
+      disabled='disabled'>
+
+First input = {{num1}}
+Second input = {{num2}}
+And Addition = {{num1|addd:num2}}
+      </textarea>
+
+      {% elif 'sub' in request.POST %}
+          <textarea class="form-control" rows="6" 
+      disabled='disabled'>
+
+First input = {{num1}}
+Second input = {{num2}}
+And Subtraction = {{num1|sub:num2}}
+      </textarea>
+
+      {% elif 'mul' in request.POST %}
+          <textarea class="form-control" rows="6" 
+      disabled='disabled'>
+
+First input = {{num1}}
+Second input = {{num2}}
+And Multiplication = {{num1|mul:num2}}
+      </textarea>
+
+      {% elif 'div' in request.POST %}
+          <textarea class="form-control" rows="6" 
+      disabled='disabled'>
+
+First input = {{num1}}
+Second input = {{num2}}
+And Division = {{num1|divide:num2}}
+      </textarea>
+
+      {% elif 'rem' in request.POST %}
+          <textarea class="form-control" rows="6" 
+      disabled='disabled'>
+
+First input = {{num1}}
+Second input = {{num2}}
+And Reminder = {{num1|reminder:num2}}
+      </textarea>
+      {% endif %}
+        </div> 
+        </div>
+      </div>
+      
+    </div> 
+</div>
+{% endblock content %}

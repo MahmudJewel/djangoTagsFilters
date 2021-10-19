@@ -1,4 +1,47 @@
-﻿# Built-in template tags and filters
+﻿# Custom template tags and filters
+Django allows to create custom templates and filters(functions).
+
+## Process: 
+i) Create a folder named ‘templatetags’ inside apps. #app can be created python manage.py createapp appName
+ii) Inside ‘templatetags’ folder, create a file named ‘__init__.py’ .    
+iii) Now we can create custom module as many as we want.
+iv) Load the module without extension inside the template.
+	**{% load custom_tag %}** 
+Example:
+```
+second /
+	templatetags	
+		__init__.py
+		custom_tags.py
+
+where second = app folder,
+	templatetags = custome tag folder
+	custom_tag.py = our custom module
+```
+Structure
+templatetags /custom _tags.py
+```
+from django import template
+register = template.Library()
+
+@register.filter(name='custom_add')
+def custom_add(a,b):
+    return a+b
+```
+    
+demo.html
+```
+***
+***
+***
+<h1> {{num1|custom_add:num2}}  </h1>
+***
+***
+***
+```
+
+
+# Built-in template tags and filters
 In templates, values are passed  {{value}} and Tags are passed {% tags %}
 ## filter==>Method or Function
 Filters the contents of the block through one or more filters. Multiple filters can be specified with pipes and filters can have arguments, just as in variable syntax.
@@ -117,7 +160,9 @@ If value is a datetime object (e.g., the result of datetime.datetime.now())
 ***
 
 # Reference:
-https://docs.djangoproject.com/en/3.2/ref/templates/builtins/
+Built-in tags: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/
+Custom-tags: https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/
+
 
 
 

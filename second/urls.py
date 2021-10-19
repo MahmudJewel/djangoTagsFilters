@@ -7,4 +7,6 @@ urlpatterns = [
     path('string', views.string, name='string'),
     path('reference', views.reference, name='reference'),
 
+    path('operation', views.operation, name='operation'),
+
 ]
