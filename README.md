@@ -181,8 +181,8 @@ If value is a datetime object (e.g., the result of datetime.datetime.now())
 ***
 
 # Reference:
-Built-in tags: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/
-Custom-tags: https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/
+1. Built-in tags: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/
+2. Custom-tags: https://docs.djangoproject.com/en/3.2/howto/custom-template-tags/
 
 
 
