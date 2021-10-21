@@ -2,8 +2,8 @@
 Django allows to create custom templates and filters(functions).
 
 ## Process: 
-* i) Create a folder named ‘templatetags’ inside apps. #app can be created python manage.py createapp appName
-* ii) Inside ‘templatetags’ folder, create a file named ‘__init__.py’ .    
+* i) Create a folder named **templatetags** inside apps. #app can be created python manage.py createapp appName
+* ii) Inside **templatetags** folder, create a file named ‘__init__.py’ . #It considers the folder as python package    
 * iii) Now we can create custom module as many as we want.
 * iv) Load the module without extension inside the template.
 	**{% load custom_tag %}** 
@@ -39,6 +39,22 @@ demo.html
 ***
 ***
 ```
+
+## Simple tag
+Simple tag allows to pass multiple values on custome template tags.
+
+```
+@register.simple_tag
+def addition(num1, mun2 , num3, num4):
+	return num1+num2+num3+num4
+```
+
+HTML file
+```
+{% addition a b c d %}
+```
+
+
 
 
 # Built-in template tags and filters
