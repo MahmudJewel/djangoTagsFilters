@@ -2,13 +2,13 @@
 Django allows to create custom templates and filters(functions).
 
 ## Process: 
-* i) Create a folder named **templatetags** inside apps. #app can be created python manage.py createapp appName
-* ii) Inside **templatetags** folder, create a file named ```__init__.py``` . #It considers the folder as python package    
-* iii) Now we can create custom module as many as we want.
-* iv) Load the module without extension inside the template.
+i. Create a folder named **templatetags** inside apps. #app can be created python manage.py createapp appName
+ii. Inside **templatetags** folder, create a file named ```__init__.py``` . #It considers the folder as python package    
+iii. Now we can create custom module as many as we want.
+iv. Load the module without extension inside the template.
 	**{% load custom_tag %}** 
 Example:
-```
+```python
 second /
 	templatetags	
 		__init__.py
@@ -20,7 +20,8 @@ where second = app folder,
 ```
 Structure
 templatetags /custom _tags.py
-```
+
+```python
 from django import template
 register = template.Library()
 
@@ -30,7 +31,7 @@ def custom_add(a,b):
 ```
     
 demo.html
-```
+```html
 ***
 ***
 ***
@@ -65,7 +66,7 @@ Filters the contents of the block through one or more filters. Multiple filters 
 
 Structure:
 Note that the block includes all the text between the filter and endfilter tags.
-```
+```python
 {% filter force_escape|lower %}
 	This text will be HTML-escaped, and will appear in all lowercase.	
 {% endfilter %}
