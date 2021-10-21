@@ -43,7 +43,7 @@ demo.html
 ## Simple tag
 Simple tag allows to pass multiple values on custome template tags.
 
-```
+```python
 @register.simple_tag
 def addition(num1, mun2 , num3, num4):
 	return num1+num2+num3+num4
